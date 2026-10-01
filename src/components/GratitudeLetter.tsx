@@ -6,25 +6,28 @@ const virtues = [
     icon: <Heart className="w-6 h-6" />,
     title: 'Hospitalidade Genuína',
     description: 'Acolhe com amor e faz qualquer um sentir-se em casa.',
-    color: 'from-rose-400/20 to-pink-600/10',
-    borderColor: 'rgba(244, 114, 182, 0.2)',
-    iconColor: '#f472b6',
+    color: 'from-amber-400/20 to-amber-600/10',
+    borderColor: 'rgba(245, 158, 11, 0.3)',
+    iconColor: '#f59e0b',
+    bgIcon: 'rgba(245, 158, 11, 0.15)',
   },
   {
     icon: <Star className="w-6 h-6" />,
     title: 'Espírito Trabalhador no Serviço',
     description: 'Disposição sincera no LDC, na manutenção e nas reuniões.',
-    color: 'from-amber-400/20 to-yellow-600/10',
-    borderColor: 'rgba(251, 191, 36, 0.2)',
-    iconColor: '#fbbf24',
+    color: 'from-sky-400/20 to-sky-600/10',
+    borderColor: 'rgba(56, 189, 248, 0.3)',
+    iconColor: '#38bdf8',
+    bgIcon: 'rgba(56, 189, 248, 0.15)',
   },
   {
     icon: <Award className="w-6 h-6" />,
     title: 'Fé & Perseverança Inabalável',
     description: 'Uma filha amada e aprovada por Jeová.',
-    color: 'from-purple-400/20 to-violet-600/10',
-    borderColor: 'rgba(192, 132, 252, 0.2)',
-    iconColor: '#c084fc',
+    color: 'from-amber-300/20 to-yellow-600/10',
+    borderColor: 'rgba(251, 191, 36, 0.3)',
+    iconColor: '#fbbf24',
+    bgIcon: 'rgba(251, 191, 36, 0.15)',
   },
 ]
 
@@ -33,11 +36,19 @@ export const GratitudeLetter: React.FC = () => {
     <section className="relative px-4 py-20 overflow-hidden" id="carta">
       {/* Background ambient */}
       <div
-        className="ambient-glow w-[500px] h-[500px] opacity-8"
+        className="ambient-glow w-[500px] h-[500px] opacity-10"
         style={{
-          background: 'radial-gradient(ellipse, #c084fc 0%, transparent 65%)',
+          background: 'radial-gradient(ellipse, #f59e0b 0%, transparent 65%)',
           top: '10%',
           right: '-10%',
+        }}
+      />
+      <div
+        className="ambient-glow w-[400px] h-[400px] opacity-10"
+        style={{
+          background: 'radial-gradient(ellipse, #38bdf8 0%, transparent 65%)',
+          bottom: '10%',
+          left: '-10%',
         }}
       />
 
@@ -45,11 +56,11 @@ export const GratitudeLetter: React.FC = () => {
         {/* Section label */}
         <div className="flex flex-col items-center mb-12 gap-3">
           <div className="flex items-center gap-3">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent to-rose-gold opacity-50" />
-            <span className="text-xs font-sans tracking-widest uppercase text-white/40">
+            <div className="h-px w-12 bg-gradient-to-r from-transparent to-amber-500/50" />
+            <span className="text-xs font-sans tracking-widest uppercase text-amber-400/80 font-medium">
               Com Carinho
             </span>
-            <div className="h-px w-12 bg-gradient-to-l from-transparent to-rose-gold opacity-50" />
+            <div className="h-px w-12 bg-gradient-to-l from-transparent to-amber-500/50" />
           </div>
           <h2 className="section-title text-3xl sm:text-4xl gradient-text text-center">
             Do Meu Coração para o Teu
@@ -60,11 +71,11 @@ export const GratitudeLetter: React.FC = () => {
         <div
           className="relative rounded-3xl p-6 sm:p-10 overflow-hidden"
           style={{
-            background: 'rgba(255, 255, 255, 0.03)',
+            background: 'rgba(15, 23, 42, 0.65)',
             backdropFilter: 'blur(20px)',
             WebkitBackdropFilter: 'blur(20px)',
-            border: '1px solid rgba(244, 114, 182, 0.15)',
-            boxShadow: '0 0 60px rgba(244, 114, 182, 0.05), 0 0 120px rgba(192, 132, 252, 0.03)',
+            border: '1px solid rgba(245, 158, 11, 0.22)',
+            boxShadow: '0 10px 40px rgba(0, 0, 0, 0.5), 0 0 50px rgba(245, 158, 11, 0.06)',
           }}
         >
           {/* Decorative corner glow */}
@@ -75,15 +86,15 @@ export const GratitudeLetter: React.FC = () => {
             }}
           />
           <div
-            className="absolute bottom-0 left-0 w-48 h-48 opacity-10 pointer-events-none"
+            className="absolute bottom-0 left-0 w-48 h-48 opacity-12 pointer-events-none"
             style={{
-              background: 'radial-gradient(circle at bottom left, #f472b6, transparent 70%)',
+              background: 'radial-gradient(circle at bottom left, #38bdf8, transparent 70%)',
             }}
           />
 
           {/* Letter content */}
           <div className="relative space-y-5">
-            <p className="text-body text-base sm:text-lg leading-relaxed">
+            <p className="text-body text-base sm:text-lg leading-relaxed text-slate-200">
               <span className="section-title text-2xl sm:text-3xl gradient-text block mb-4">
                 Olá, Isabel Kinanga.
               </span>
@@ -92,13 +103,13 @@ export const GratitudeLetter: React.FC = () => {
               absoluta de que estás sempre no meu coração.
             </p>
 
-            <p className="text-body text-base sm:text-lg leading-relaxed text-white/80">
+            <p className="text-body text-base sm:text-lg leading-relaxed text-slate-200">
               Várias vezes tenho mencionado nas minhas orações que Jeová te ajude a lidar com esta
               situação, que te conceda verdadeira paz mental e que te ajude a encontrar alegria
               sincera, independentemente das dificuldades que estejas a enfrentar.
             </p>
 
-            <p className="text-body text-base sm:text-lg leading-relaxed text-white/80">
+            <p className="text-body text-base sm:text-lg leading-relaxed text-slate-200">
               Por isso, queria que parasses por um momento e pensasses no quanto és importante — não
               só para mim, mas com certeza para muitas outras pessoas. Às vezes, no meio de uma
               situação difícil, podemos esquecer o nosso próprio valor e o quanto somos queridos.
@@ -106,7 +117,7 @@ export const GratitudeLetter: React.FC = () => {
               <span role="img" aria-label="heart">❤️</span>
             </p>
 
-            <p className="text-body text-base sm:text-lg leading-relaxed text-white/80">
+            <p className="text-body text-base sm:text-lg leading-relaxed text-slate-200">
               Acredito firmemente que tudo o que tens feito, apesar do que estás a passar, tem sido
               uma grande fonte de encorajamento, tanto para mim como para quem te rodeia. E tenho a
               certeza de que Jeová se alegra profundamente ao ver que continuas ativa
@@ -118,8 +129,8 @@ export const GratitudeLetter: React.FC = () => {
             <div
               className="rounded-2xl p-5 sm:p-7 my-6 relative overflow-hidden"
               style={{
-                background: 'rgba(251, 191, 36, 0.06)',
-                border: '1px solid rgba(251, 191, 36, 0.18)',
+                background: 'rgba(245, 158, 11, 0.08)',
+                border: '1px solid rgba(245, 158, 11, 0.35)',
               }}
             >
               <div
@@ -128,13 +139,13 @@ export const GratitudeLetter: React.FC = () => {
                   background: 'radial-gradient(circle at top right, #fbbf24, transparent 70%)',
                 }}
               />
-              <p className="text-xs font-sans tracking-widest uppercase text-white/40 mb-3">
+              <p className="text-xs font-sans tracking-widest uppercase text-amber-400 font-semibold mb-3">
                 Marcos 1:11
               </p>
-              <p className="text-body text-base sm:text-lg leading-relaxed text-white/80 relative">
+              <p className="text-body text-base sm:text-lg leading-relaxed text-slate-200 relative">
                 Lembro-me com carinho das palavras que Jeová dirigiu a Jesus em Marcos 1:11:{' '}
                 <blockquote className="inline-block not-italic">
-                  <em className="section-title text-lg gradient-text-gold">
+                  <em className="section-title text-lg gradient-text-gold font-semibold">
                     "Tu és meu Filho, o amado; eu te aprovo."
                   </em>
                 </blockquote>{' '}
@@ -149,15 +160,15 @@ export const GratitudeLetter: React.FC = () => {
               </p>
             </div>
 
-            <p className="text-body text-base sm:text-lg leading-relaxed text-white/80">
+            <p className="text-body text-base sm:text-lg leading-relaxed text-slate-200">
               Tem a plena certeza de que esta situação não vai durar para sempre. Vai passar. Até
               lá, continua a confiar em Jeová e a viver um dia de cada vez.
             </p>
 
             {/* Signature */}
-            <div className="pt-4 border-t border-white/10">
-              <p className="text-white/50 text-sm font-sans italic mb-1">Com todo o amor,</p>
-              <p className="section-title text-xl gradient-text">Arminda</p>
+            <div className="pt-4 border-t border-slate-800">
+              <p className="text-slate-400 text-sm font-sans italic mb-1">Com todo o amor,</p>
+              <p className="section-title text-2xl gradient-text">Arminda</p>
             </div>
           </div>
         </div>
@@ -167,9 +178,9 @@ export const GratitudeLetter: React.FC = () => {
           {virtues.map((virtue, i) => (
             <div
               key={i}
-              className="rounded-2xl p-5 flex flex-col gap-3 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+              className="rounded-2xl p-5 flex flex-col gap-3 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
               style={{
-                background: `linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))`,
+                background: 'rgba(15, 23, 42, 0.7)',
                 backdropFilter: 'blur(12px)',
                 WebkitBackdropFilter: 'blur(12px)',
                 border: `1px solid ${virtue.borderColor}`,
@@ -178,16 +189,16 @@ export const GratitudeLetter: React.FC = () => {
               <div
                 className="w-10 h-10 rounded-xl flex items-center justify-center"
                 style={{
-                  background: `rgba(${virtue.iconColor === '#f472b6' ? '244,114,182' : virtue.iconColor === '#fbbf24' ? '251,191,36' : '192,132,252'}, 0.12)`,
+                  background: virtue.bgIcon,
                   color: virtue.iconColor,
                 }}
               >
                 {virtue.icon}
               </div>
-              <h3 className="font-serif font-semibold text-base text-white/90 leading-snug">
+              <h3 className="font-serif font-semibold text-base text-slate-100 leading-snug">
                 {virtue.title}
               </h3>
-              <p className="text-sm font-sans text-white/60 leading-relaxed">
+              <p className="text-sm font-sans text-slate-300/80 leading-relaxed">
                 {virtue.description}
               </p>
             </div>

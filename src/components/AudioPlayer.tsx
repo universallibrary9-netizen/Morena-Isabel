@@ -167,21 +167,21 @@ export const AudioPlayer: React.FC = () => {
       {/* Play/Pause button */}
       <button
         onClick={toggle}
-        className="flex items-center gap-2 px-3 py-1.5 rounded-full transition-all duration-300"
+        className="flex items-center gap-2 px-3.5 py-1.5 rounded-full transition-all duration-300"
         style={{
           background: isPlaying
-            ? 'rgba(244, 114, 182, 0.15)'
-            : 'rgba(255, 255, 255, 0.06)',
-          border: `1px solid ${isPlaying ? 'rgba(244, 114, 182, 0.4)' : 'rgba(255, 255, 255, 0.1)'}`,
+            ? 'rgba(245, 158, 11, 0.18)'
+            : 'rgba(15, 23, 42, 0.65)',
+          border: `1px solid ${isPlaying ? 'rgba(245, 158, 11, 0.5)' : 'rgba(148, 163, 184, 0.2)'}`,
         }}
         aria-label={isPlaying ? 'Pausar música' : 'Tocar música ambiente'}
       >
         {isPlaying ? (
-          <Pause className="w-3.5 h-3.5 text-rose-300" />
+          <Pause className="w-3.5 h-3.5 text-amber-400" />
         ) : (
-          <Music className="w-3.5 h-3.5 text-white/60" />
+          <Music className="w-3.5 h-3.5 text-slate-300" />
         )}
-        <span className="text-xs font-sans font-medium hidden sm:block" style={{ color: isPlaying ? '#f9a8d4' : 'rgba(255,255,255,0.5)' }}>
+        <span className="text-xs font-sans font-medium hidden sm:block" style={{ color: isPlaying ? '#fbbf24' : 'rgba(203, 213, 225, 0.8)' }}>
           {isPlaying ? 'Pausar' : 'Música'}
         </span>
         {isPlaying && (
@@ -189,7 +189,7 @@ export const AudioPlayer: React.FC = () => {
             {[1, 2, 3].map((i) => (
               <span
                 key={i}
-                className="w-0.5 rounded-full bg-rose-400"
+                className="w-0.5 rounded-full bg-amber-400"
                 style={{
                   height: `${4 + i * 2}px`,
                   animation: `pulse ${0.6 + i * 0.15}s ease-in-out infinite`,

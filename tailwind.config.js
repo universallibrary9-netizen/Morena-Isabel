@@ -11,13 +11,11 @@ export default {
         sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
       },
       colors: {
-        'bg-deep': '#09070F',
-        'bg-mid': '#120c18',
-        'rose-gold': '#f472b6',
-        'rose-warm': '#fb7185',
-        'champagne': '#fde68a',
-        'gold': '#fbbf24',
-        'lavender': '#c084fc',
+        'bg-deep': '#020617', // slate-950
+        'bg-surface': '#0f172a', // slate-900
+        'amber-gold': '#fbbf24',
+        'amber-warm': '#f59e0b',
+        'sky-soft': '#38bdf8',
       },
       animation: {
         'pulse-soft': 'pulse-soft 3s ease-in-out infinite',
@@ -37,8 +35,8 @@ export default {
           '50%': { transform: 'translateY(-10px)' },
         },
         'glow': {
-          '0%': { boxShadow: '0 0 20px rgba(244, 114, 182, 0.3)' },
-          '100%': { boxShadow: '0 0 40px rgba(244, 114, 182, 0.6), 0 0 80px rgba(251, 191, 36, 0.2)' },
+          '0%': { boxShadow: '0 0 20px rgba(245, 158, 11, 0.3)' },
+          '100%': { boxShadow: '0 0 40px rgba(245, 158, 11, 0.6), 0 0 80px rgba(56, 189, 248, 0.25)' },
         },
         'fade-in': {
           '0%': { opacity: '0' },

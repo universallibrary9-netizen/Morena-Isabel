@@ -18,8 +18,8 @@ function App() {
 
   return (
     <div
-      className="relative min-h-screen"
-      style={{ background: 'linear-gradient(180deg, #09070F 0%, #120c18 50%, #09070F 100%)' }}
+      className="relative min-h-screen bg-slate-950 text-slate-100 selection:bg-amber-500/30 selection:text-amber-300"
+      style={{ background: 'linear-gradient(180deg, #020617 0%, #0b1120 50%, #020617 100%)' }}
     >
       {/* Splash Screen */}
       {showSplash && <SplashScreen onEnter={handleEnterSite} />}
