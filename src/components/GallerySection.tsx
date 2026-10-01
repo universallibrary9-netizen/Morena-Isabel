@@ -125,19 +125,24 @@ const Lightbox: React.FC<LightboxProps> = ({ photos, currentIndex, onClose, onPr
 
       {/* Content */}
       <div
-        className="flex flex-col items-center max-w-2xl w-full gap-4"
+        className="flex flex-col items-center max-w-4xl w-full max-h-[92vh] gap-3 overflow-y-auto px-2 py-4 my-auto select-none"
         onClick={(e) => e.stopPropagation()}
       >
-        <img
-          src={photo.src}
-          alt={photo.title}
-          className="w-full max-h-[60vh] object-cover rounded-2xl"
-          style={{ border: '1px solid rgba(244, 114, 182, 0.2)' }}
-        />
-        <div className="text-center px-4">
-          <h3 className="section-title text-xl gradient-text mb-2">{photo.title}</h3>
-          <p className="text-body text-sm text-white/70 leading-relaxed">{photo.caption}</p>
-          <p className="text-white/30 text-xs mt-3 font-sans">
+        <div className="flex items-center justify-center w-full">
+          <img
+            src={photo.src}
+            alt={photo.title}
+            className="max-h-[62vh] sm:max-h-[72vh] max-w-full w-auto object-contain rounded-2xl mx-auto"
+            style={{
+              border: '1px solid rgba(244, 114, 182, 0.25)',
+              boxShadow: '0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(244, 114, 182, 0.12)',
+            }}
+          />
+        </div>
+        <div className="text-center px-4 max-w-2xl mx-auto">
+          <h3 className="section-title text-lg sm:text-2xl gradient-text mb-1.5 font-serif font-semibold">{photo.title}</h3>
+          <p className="text-body text-xs sm:text-base text-white/80 leading-relaxed font-sans">{photo.caption}</p>
+          <p className="text-white/35 text-xs mt-2 font-sans tracking-widest">
             {currentIndex + 1} / {photos.length}
           </p>
         </div>
@@ -169,9 +174,9 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ photo, onClick, className = '' })
         loading="lazy"
       />
 
-      {/* Permanently visible overlay so captions are readable on mobile and desktop */}
+      {/* Overlay: Always visible on mobile, appears on hover on computer */}
       <div
-        className="absolute inset-0 flex flex-col justify-end p-3.5 sm:p-5 transition-all duration-300"
+        className="absolute inset-0 flex flex-col justify-end p-3.5 sm:p-5 transition-all duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100"
         style={{
           background:
             'linear-gradient(to top, rgba(9, 7, 15, 0.96) 0%, rgba(9, 7, 15, 0.82) 42%, rgba(9, 7, 15, 0.25) 75%, transparent 100%)',
