@@ -107,10 +107,10 @@ export const HeroSection: React.FC = () => {
             <blockquote
               className="section-title text-lg sm:text-xl text-white/90 leading-relaxed italic"
             >
-              "O próprio Jeová te guardará de todo o mal. Ele guardará a tua vida."
+              "Não tenhas medo, pois estou contigo. Não fiques ansioso, pois eu sou o teu Deus. Vou fortalecer-te, sim, vou ajudar-te. Vou segurar-te firmemente com a minha mão direita de justiça."
             </blockquote>
             <cite className="block mt-3 text-sm font-sans gradient-text-gold not-italic font-medium">
-              — Salmo 121:7
+              — Isaías 41:10
             </cite>
           </div>
         </div>

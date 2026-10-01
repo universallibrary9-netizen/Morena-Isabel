@@ -1,6 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react'
 import confetti from 'canvas-confetti'
-import { Sparkles } from 'lucide-react'
 
 interface SplashScreenProps {
   onEnter: () => void
@@ -102,58 +101,36 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onEnter }) => {
       </div>
 
       {/* Central content */}
-      <div className="flex flex-col items-center gap-8 px-6 text-center relative z-10">
-        {/* Decorative top ornament */}
-        <div className="flex items-center gap-3 opacity-60">
-          <div className="h-px w-16 bg-gradient-to-r from-transparent to-rose-gold" />
-          <Sparkles className="w-4 h-4 text-champagne" />
-          <div className="h-px w-16 bg-gradient-to-l from-transparent to-rose-gold" />
-        </div>
-
+      <div className="flex flex-col items-center gap-7 px-6 text-center relative z-10 max-w-md mx-auto">
         <div className="flex flex-col items-center gap-2">
-          <p
-            className="text-sm tracking-widest uppercase font-sans text-white/40 font-light"
-          >
+          <p className="text-xs sm:text-sm tracking-widest uppercase font-sans text-rose-300/80 font-medium">
             Uma mensagem especial
           </p>
           <h1
-            className="section-title text-3xl sm:text-4xl gradient-text"
-            style={{ textShadow: '0 0 40px rgba(244, 114, 182, 0.3)' }}
+            className="section-title text-3xl sm:text-4xl text-white font-serif"
+            style={{ textShadow: '0 0 35px rgba(244, 114, 182, 0.35)' }}
           >
             Para a Irmã Isabel
           </h1>
         </div>
 
-        {/* Main CTA Button */}
+        {/* Main CTA Button with rich, solid color */}
         <button
           ref={buttonRef}
           onClick={handleEnter}
-          className="btn-glow relative px-10 py-5 rounded-2xl font-serif text-xl sm:text-2xl font-semibold tracking-wide cursor-pointer select-none"
+          className="relative px-9 py-4 sm:px-12 sm:py-5 rounded-2xl font-serif text-2xl sm:text-3xl font-semibold tracking-wide cursor-pointer select-none transition-all duration-300 hover:scale-105 active:scale-95 shadow-2xl"
           style={{
             fontFamily: '"Cormorant Garamond", Georgia, serif',
-            animation: 'pulse 3s ease-in-out infinite',
+            background: 'linear-gradient(135deg, #e11d48 0%, #be185d 50%, #9f1239 100%)',
+            border: '2px solid rgba(253, 230, 138, 0.45)',
+            boxShadow: '0 12px 35px rgba(225, 29, 72, 0.45), 0 0 25px rgba(251, 191, 36, 0.2)',
           }}
+          aria-label="Abrir mensagem Olá Morena"
         >
-          {/* Inner shimmer effect */}
-          <div
-            className="absolute inset-0 rounded-2xl opacity-30"
-            style={{
-              background:
-                'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%)',
-              backgroundSize: '200% 100%',
-              animation: 'shimmer 3s linear infinite',
-            }}
-          />
-
-          <span className="relative gradient-text flex items-center gap-2">
-            Olá Morena
-            <span role="img" aria-label="sparkles">✨</span>
+          <span className="flex items-center justify-center gap-2 text-white font-serif drop-shadow-md">
+            Olá Morena ✨
           </span>
         </button>
-
-        <p className="text-white/30 font-sans text-sm font-light animate-pulse">
-          Toca para abrir ✦
-        </p>
       </div>
     </div>
   )

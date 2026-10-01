@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react'
-import { X, ChevronLeft, ChevronRight, Camera } from 'lucide-react'
+import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 
 interface Photo {
   src: string
@@ -157,54 +157,46 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ photo, onClick, className = '' })
     <div
       className={`relative group cursor-pointer overflow-hidden rounded-3xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl ${className}`}
       style={{
-        border: '1px solid rgba(244, 114, 182, 0.15)',
-        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
+        border: '1px solid rgba(244, 114, 182, 0.18)',
+        boxShadow: '0 8px 24px rgba(0, 0, 0, 0.4)',
       }}
       onClick={onClick}
     >
       <img
         src={photo.src}
         alt={photo.title}
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         loading="lazy"
       />
-      {/* Overlay */}
+
+      {/* Permanently visible overlay so captions are readable on mobile and desktop */}
       <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-400 flex flex-col justify-end p-4 sm:p-5"
+        className="absolute inset-0 flex flex-col justify-end p-3.5 sm:p-5 transition-all duration-300"
         style={{
-          background: 'linear-gradient(to top, rgba(9, 7, 15, 0.92) 0%, rgba(9, 7, 15, 0.3) 60%, transparent 100%)',
+          background:
+            'linear-gradient(to top, rgba(9, 7, 15, 0.96) 0%, rgba(9, 7, 15, 0.82) 42%, rgba(9, 7, 15, 0.25) 75%, transparent 100%)',
         }}
       >
-        <h3 className="section-title text-base sm:text-lg gradient-text leading-tight">
+        <h3 className="section-title text-sm sm:text-base md:text-lg gradient-text leading-tight line-clamp-1 font-semibold">
           {photo.title}
         </h3>
-        <p className="text-white/70 text-xs mt-1 line-clamp-2 font-sans leading-relaxed">
+        <p className="text-white/80 text-xs sm:text-sm mt-1 font-sans leading-relaxed line-clamp-2 sm:line-clamp-3">
           {photo.caption}
         </p>
-      </div>
-
-      {/* Camera icon on hover */}
-      <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <div
-          className="w-8 h-8 rounded-full flex items-center justify-center"
-          style={{ background: 'rgba(244, 114, 182, 0.2)', backdropFilter: 'blur(8px)' }}
-        >
-          <Camera className="w-4 h-4 text-rose-300" />
-        </div>
       </div>
 
       {/* Featured badge */}
       {photo.featured && (
         <div
-          className="absolute top-3 left-3 px-2 py-1 rounded-full text-xs font-sans font-medium"
+          className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-sans font-medium"
           style={{
-            background: 'rgba(251, 191, 36, 0.15)',
-            border: '1px solid rgba(251, 191, 36, 0.3)',
+            background: 'rgba(251, 191, 36, 0.2)',
+            border: '1px solid rgba(251, 191, 36, 0.4)',
             color: '#fde68a',
             backdropFilter: 'blur(8px)',
           }}
         >
-          ✦ Destaque
+          Destaque
         </div>
       )}
     </div>
@@ -253,13 +245,13 @@ export const GallerySection: React.FC = () => {
           <h2 className="section-title text-3xl sm:text-4xl gradient-text text-center">
             Momentos com a Nossa Morena
           </h2>
-          <p className="text-body text-sm text-white/50 text-center max-w-sm">
-            Toca em cada foto para ver em ecrã completo ✦
+          <p className="text-body text-sm text-white/70 text-center max-w-sm flex items-center justify-center gap-1.5 font-sans">
+            <span role="img" aria-label="foto">🖼️</span> Toca em cada foto para ver em ecrã completo
           </p>
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 auto-rows-[180px] sm:auto-rows-[220px]">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3.5 sm:gap-4 auto-rows-[220px] sm:auto-rows-[240px] md:auto-rows-[260px]">
           {/* Photo 1 — Featured large */}
           <PhotoCard
             photo={photos[0]}
@@ -279,14 +271,14 @@ export const GallerySection: React.FC = () => {
           {/* Photo 5 */}
           <PhotoCard photo={photos[4]} onClick={() => openLightbox(4)} />
 
-          {/* Photo 6 — Wide */}
+          {/* Photo 6 */}
           <PhotoCard
             photo={photos[5]}
             onClick={() => openLightbox(5)}
-            className="col-span-1 sm:col-span-1"
+            className="col-span-2 sm:col-span-1"
           />
 
-          {/* Photo 7 — Wide */}
+          {/* Photo 7 — Wide panorama */}
           <PhotoCard
             photo={photos[6]}
             onClick={() => openLightbox(6)}

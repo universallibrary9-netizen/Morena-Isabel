@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { Heart, ArrowUp } from 'lucide-react'
+import { ArrowUp } from 'lucide-react'
 
 export const Footer: React.FC = () => {
   const scrollToTop = useCallback(() => {
@@ -25,49 +25,30 @@ export const Footer: React.FC = () => {
       />
 
       <div className="max-w-2xl mx-auto flex flex-col items-center gap-8 relative z-10">
-        {/* Decorative divider */}
-        <div className="flex items-center gap-4 w-full max-w-xs">
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-rose-gold/30 to-transparent" />
-          <Heart className="w-4 h-4 text-rose-400 fill-rose-400 opacity-60" />
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-rose-gold/30 to-transparent" />
-        </div>
-
-        {/* Main message */}
-        <div className="text-center flex flex-col gap-3">
-          <p className="text-white/40 text-sm font-sans font-light tracking-wide">
-            Feito com muito
-          </p>
-          <div className="flex items-center justify-center gap-2">
-            <Heart className="w-5 h-5 text-rose-400 fill-rose-400" />
-          </div>
+        {/* Main dedication card */}
+        <div className="text-center flex flex-col items-center gap-3 w-full">
           <div
-            className="glass-card px-8 py-5 text-center"
+            className="glass-card px-8 py-7 text-center max-w-md w-full"
+            style={{
+              border: '1px solid rgba(244, 114, 182, 0.22)',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.35), 0 0 30px rgba(244, 114, 182, 0.08)',
+            }}
           >
-            <p
-              className="section-title text-lg sm:text-xl leading-relaxed"
-              style={{
-                background: 'linear-gradient(135deg, #fde68a, #f472b6, #c084fc)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
-            >
-              Feito com muito ❤️ por...
+            <p className="text-white/80 font-sans text-sm sm:text-base leading-relaxed">
+              Feito com muito coração,
             </p>
-            <p className="text-white/70 font-sans text-sm mt-2 leading-relaxed">
-              Da filha do teu pai Mitange,
+            <p className="text-rose-200/90 font-sans text-sm sm:text-base leading-relaxed mt-1">
+              pela filha do teu pai Mitange,
             </p>
-            <p
-              className="section-title text-2xl sm:text-3xl mt-1 gradient-text"
-            >
+            <p className="section-title text-2xl sm:text-3xl mt-2 gradient-text font-serif font-semibold">
               Arminda.
             </p>
           </div>
         </div>
 
         {/* Bible verse closing */}
-        <p className="text-white/30 text-xs font-sans text-center italic max-w-xs leading-relaxed">
-          "O próprio Jeová te guardará de todo o mal." — Sl. 121:7
+        <p className="text-white/40 text-xs sm:text-sm font-sans text-center italic max-w-sm leading-relaxed">
+          "Pois eu, Jeová, teu Deus, seguro a tua mão direita e te digo: ‘Não tenhas medo. Eu te ajudarei.’" — Isaías 41:13
         </p>
 
         {/* Back to top button */}
@@ -86,7 +67,7 @@ export const Footer: React.FC = () => {
 
         {/* Copyright */}
         <p className="text-white/20 text-xs font-sans text-center">
-          © 2024 — Com amor, de Arminda para Isabel ✦
+          © 2024 — Com amor, de Arminda para Isabel
         </p>
       </div>
     </footer>
